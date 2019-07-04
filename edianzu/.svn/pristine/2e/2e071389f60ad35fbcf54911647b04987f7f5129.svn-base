@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://m.edianzu.com/wap -->
+<html style="font-size: 25.875px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>首页</title>
+ 
+    <meta name="Keywords" content="电脑租赁,免押金,易点租,免押金租赁,企业租赁电脑,出租办公电脑,北京电脑租赁,IBM笔记本租赁,IBM电脑租赁,租赁苹果电脑,服务器租赁,高配台式机租赁,笔记本电脑租赁,苹果电脑租赁,北京笔记本出租,免押金租电脑,电脑免押金租赁">
+    <meta name="baidu-site-verification" content="x6vU8kiRne">
+    <meta name="Description" content="易点租 首创0押金，月租金85元/月起，随租随还，全程保修。中小企业办公电脑最优之选。">
+    <link href="/static/index/css/app.ffb88b90a0d3fde7e2f0.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/main.css">
+    <link rel="stylesheet" href="/static/index/css/index.css">
+    <link rel="stylesheet" href="/static/goods/css/swiper.css">
+    <script src="/static/order/js/jquery-1.11.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <header data-v-3536ac9b="" class="header fixed blue">
+                <div data-v-3536ac9b="">
+                    <div data-v-3536ac9b="" class="phone">
+                        销售热线：<a data-v-3536ac9b="" href="tel:4008109528">400-810-9528</a>&nbsp;&nbsp;
+                        客服热线：<a data-v-3536ac9b="" href="tel:4008869528">400-886-9528</a></div>
+                    <div data-v-3536ac9b="" class="content">
+                        <h1 data-v-3536ac9b=""><a data-v-3536ac9b="" href="https://m.edianzu.com/wap">易点租电脑租赁</a></h1>
+                        <div data-v-3536ac9b="" class="search long"><i data-v-3536ac9b="" class="icon icon-search"></i>
+                            {% block sidebar %}
+                            <form action="search/" method="GET">
+                                    {% csrf_token %}
+                                    <input data-v-3536ac9b="" name="key" type="search" placeholder="免押金租电脑" required>
+                            
+                            </form>
+                            {% endblock %}
+                            <!---->
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            </header>
+            <!---->
+            <div data-v-396f93b8="" class="index">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/c566db665247dac2aaf8ba05c4939f2f.jpg" class="swiper-slide-img"></a></div>
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/ce94c2c8353bac6c3db415449343e662.jpg" class="swiper-slide-img"></a></div>
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/e5c0812ba71112562ef54e07200f6ec0.jpg" class="swiper-slide-img"></a></div>
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/80e6e5eda9a01468c7b449912bb12494.jpg" class="swiper-slide-img"></a></div>
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/6c45567328b22114c22db958d37d28b5.jpg" class="swiper-slide-img"></a></div>
+                            <div class="swiper-slide"><a data-v-dfa56df2="" href=""><img data-v-dfa56df2="" src="/static/index/img/ce94c2c8353bac6c3db415449343e662.jpg" class="swiper-slide-img"></a></div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                <div data-v-396f93b8="" class="feature">
+                    <div data-v-396f93b8="" class="item"><i data-v-396f93b8="" class="icon icon-free-new"></i> <span
+                            data-v-396f93b8="">免押金</span></div>
+                    <div data-v-396f93b8="" class="item"><i data-v-396f93b8="" class="icon icon-round-new"></i> <span
+                            data-v-396f93b8="">随租随还</span></div>
+                    <div data-v-396f93b8="" class="item"><i data-v-396f93b8="" class="icon icon-pay-new"></i> <span
+                            data-v-396f93b8="">按月支付</span></div>
+                    <div data-v-396f93b8="" class="item"><i data-v-396f93b8="" class="icon icon-service-new"></i> <span
+                            data-v-396f93b8="">全程保修</span></div>
+                </div>
+                <!---->
+                <!---->
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor hot-product">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-0">
+                        <h2 data-v-03d2ea8b="">热销机型</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="">
+                            {% for item in proList1 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}" src="{{item.image}}"
+                                        lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.details}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p> <i data-v-03d2ea8b="" class="icon icon-go"></i>
+                            </a></li>  
+                            {% endfor %}                                                                                  
+                    </ul>
+                    <!---->
+                </section>
+                <section data-v-bddb9536="" data-v-396f93b8="" class="easy-rent">
+                    <div data-v-bddb9536="" class="title"><img data-v-bddb9536="" src="/static/index/img/easy-rent-3m-b2984213.png"></div>
+                    <div data-v-bddb9536="" class="content">
+                        <ul data-v-bddb9536="">
+                            <li data-v-bddb9536="">
+                                <p data-v-bddb9536="" class="minutes">1分钟</p>
+                                <p data-v-bddb9536="">选择机型</p> <img data-v-bddb9536="" src="data:image/png;base64,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">
+                            </li>
+                            <li data-v-bddb9536="">
+                                <p data-v-bddb9536="" class="minutes">1分钟</p>
+                                <p data-v-bddb9536="">获得免押金额度</p> <img data-v-bddb9536="" src="data:image/png;base64,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">
+                            </li>
+                            <li data-v-bddb9536="">
+                                <p data-v-bddb9536="" class="minutes">1分钟</p>
+                                <p data-v-bddb9536="">提交订单</p> <img data-v-bddb9536="" src="data:image/png;base64,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">
+                            </li>
+                        </ul>
+                    </div>
+                    <!---->
+                </section>
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-1">
+                        <h2 data-v-03d2ea8b="">行政办公</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="one-two">
+                            {% for item in proList2 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}"
+                                        src="{{item.image}}" lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.unit}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p>
+                                <!---->
+                            </a></li>
+                            {% endfor %}
+                    </ul>
+                    <!---->
+                </section>
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-2">
+                        <h2 data-v-03d2ea8b="">技术开发</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="">
+                            {% for item in proList3 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}"
+                                        src="{{item.image}}" lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.unit}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p>
+                                <!---->
+                            </a></li>
+                            {% endfor %}
+                    </ul>
+                    <!---->
+                </section>
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-3">
+                        <h2 data-v-03d2ea8b="">商务便携</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="one-two">
+                            {% for item in proList4 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}"
+                                        src="{{item.image}}" lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.unit}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p>
+                                <!---->
+                            </a></li>
+                            {% endfor %}
+                    </ul>
+                    <!---->
+                </section>
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-4">
+                        <h2 data-v-03d2ea8b="">图形处理</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="">
+                            {% for item in proList5 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}"
+                                        src="{{item.image}}" lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.unit}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p>
+                                <!---->
+                            </a></li>
+                            {% endfor %}
+                    </ul>
+                    <!---->
+                </section>
+                <section data-v-03d2ea8b="" data-v-396f93b8="" class="product-floor">
+                    <div data-v-03d2ea8b="" class="title icon-product-floor-5">
+                        <h2 data-v-03d2ea8b="">外设配件</h2>
+                    </div>
+                    <ul data-v-03d2ea8b="" class="one-two">
+                            {% for item in proList6 %}
+                        <li data-v-03d2ea8b="" class="first-li"><a data-v-03d2ea8b="" href="{%url 'details' item.id%}"
+                                class="" title="{{item.unit}}">
+                                <div data-v-03d2ea8b="" class="img-box"><img data-v-03d2ea8b="" alt="{{item.unit}}"
+                                        src="{{item.image}}" lazy="loaded">
+                                    <!---->
+                                </div>
+                                <p data-v-03d2ea8b="" class="name">{{item.unit}}</p>
+                                <p data-v-03d2ea8b="" class="price">￥{{item.market_price}}/月</p>
+                                <!---->
+                            </a></li>
+                            {% endfor %}
+                    </ul>
+                    <!---->
+                </section>
+            </div>
+            <footer data-v-510e0638=""><a data-v-510e0638="" class="router-link-exact-active router-link-active active">
+                    <div data-v-510e0638="" class="item">
+                        <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-home-active"></i></div>
+                        <p data-v-510e0638="">首页</p>
+                    </div>
+                </a> <a data-v-510e0638="" href="/goods/category" class="">
+                    <div data-v-510e0638="" class="item">
+                        <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-category"></i></div>
+                        <p data-v-510e0638="">分类</p>
+                    </div>
+                </a> <a data-v-510e0638="" href="/user/cart/" class="">
+                    <div data-v-510e0638="" class="item">
+                        <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-cart-footer"></i></div>
+                        <p data-v-510e0638=""><span data-v-510e0638="">购物车</span> <span data-v-510e0638="" class="cart-count">0</span></p>
+                    </div>
+                </a> <a data-v-510e0638="" href="/user/user_center" class="">
+                    <div data-v-510e0638="" class="item">
+                        <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-ucenter"></i></div>
+                        <p data-v-510e0638="">我的</p>
+                    </div>
+                </a>
+
+            </footer>
+
+        </div>
+    </div>
+<script src="/static/goods/js/swiper.js"></script>
+<script>        
+           
+           var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    effect : 'fade',//可选选项，渐变动画
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		    
+		    // 如果需要前进后退按钮
+		    navigation: {
+		      nextEl: '.swiper-button-next',
+		      prevEl: '.swiper-button-prev',
+		      hideOnClick: true,
+              hiddenClass: 'my-button-hidden',
+		    },
+		    autoplay: {
+			    delay: 2000,
+			    stopOnLastSlide: false,
+			    disableOnInteraction: true,
+			    },
+
+		  })
+
+          $.ajax({
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            url: "http://localhost:8000/order/details/num_count",
+            complete: function (res) {
+                console.log(res);
+                document.querySelector(".cart-count").innerHTML = res.responseText;
+            }
+            });
+
+  		  
+    </script>
+
+</body>
+
+</html>

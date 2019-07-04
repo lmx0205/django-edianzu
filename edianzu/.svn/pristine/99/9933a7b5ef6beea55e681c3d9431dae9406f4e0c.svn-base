@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="/static/order/css/order.css" />
+  <link rel="stylesheet" href="/static/order/css/main.css" />
+  <link rel="stylesheet" href="/static/order/css/app.ffb88b90a0d3fde7e2f0.css" />
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="detail">
+    <a href="/">
+      <i data-v-3536ac9b="" class="svg-icon icon-back"></i></a>
+      <h1 style="display:block">商品详情</h1>
+  </div>
+
+  <div class="img"><img src="/{{image}}" alt="" /></div>
+  <div class="price">
+    <span class="pri1">￥{{ market_price }}/月</span>
+    <span class="pri2">设备押金：￥{{ price }}</span>
+    <p class="pri3">{{ details }}</p>
+  </div>
+  <div class="choose">
+    <div>
+      <span class="ch1">已选商品</span>
+      <span class="ch2">{{ barcode }}</span> <span>库存({{ count }})</span>
+    </div>
+    <div class="chooSE">
+      <span>数量:</span>
+      <div class="SHOO">
+        <span class="jianNum">-</span><span class="chooseNum"></span><span data-count="{{count}}" class="addNum">+</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rent">
+    <span class="rentt">租赁方式</span>
+    <div class="rent1 active">
+      <p>
+        月租金<span>￥{{ market_price }}</span>，租期24个月<span class="ren">随租随还</span>
+      </p>
+      <p>到期归还易点租，6个月后可随时退还</p>
+    </div>
+    <div class="rent2">
+      <p>
+        月租金<span>￥{{ cost_price }}</span>，租期24个月<span class="ren">租完即送</span>
+      </p>
+      <p>到期归承租方，不可退还</p>
+    </div>
+  </div>
+  <footer data-v-510e0638="" class="product-footer">
+    <a data-v-510e0638="" href="/" class="router-link-active">
+      <div data-v-510e0638="" class="item">
+        <div data-v-510e0638="" class="icon-box">
+          <i data-v-510e0638="" class="icon icon-home"></i>
+        </div>
+        <p style="padding-top: 10px;" data-v-510e0638="">首页</p>
+      </div>
+    </a>
+    <!---->
+    <a data-v-510e0638="" href="/user/cart/" class="">
+      <div data-v-510e0638="" class="item">
+        <div data-v-510e0638="" class="icon-box">
+          <i data-v-510e0638="" class="icon icon-cart-footer"></i>
+        </div>
+        <p style="padding-top: 10px;" data-v-510e0638="">
+          <span data-v-510e0638="">购物车</span>
+          <span data-v-510e0638="" style="    height: 15px;width: 14px;margin-left: 17px;line-height: 12px;font-size: 10px;"
+            class="cart-count isDetail"></span>
+        </p>
+      </div>
+    </a>
+    <!---->
+    <div data-v-510e0638="" class="button-box">
+      <span style="height: 48px;line-height: 48px;" data-v-510e0638="" class="cart-btn" data-price="{{price}}"
+        data-market="{{market_price}}" data-cost="{{cost_price}}" data-count="{{count}}" data-details="{{details}}"
+        data-image="{{image}}">加入购物车</span><span data-v-510e0638="" style="height: 48px;line-height: 48px;" class="cart-btn confirm-btn">立即下单</span>
+      <!---->
+      <!---->
+    </div>
+    <!---->
+  </footer>
+  <script src="/static/order/js/jquery-1.11.0.js"></script>
+  <script type="text/javascript">
+    var data = {
+      chooseNum: 1
+    };
+
+
+    var Num = document.querySelector(".chooseNum");
+    Num.innerHTML = data.chooseNum;
+
+    // 选择购买数量
+    var jianNum = (document.querySelector(".jianNum").onclick = function () {
+      if (data.chooseNum > 1) {
+        data.chooseNum = data.chooseNum - 1;
+        Num.innerHTML = data.chooseNum;
+      }
+    });
+
+    var jianNum = (document.querySelector(".addNum").onclick = function () {
+      var count = this.dataset.count;
+      if (data.chooseNum < count) {
+        data.chooseNum = data.chooseNum + 1;
+        Num.innerHTML = data.chooseNum;
+      }
+    });
+    // 选择租赁方式
+    var rent1 = document.querySelector(".rent1");
+    var rent2 = document.querySelector(".rent2");
+
+    rent1.onclick = function () {
+      rent1.className = "rent1 active";
+      rent2.className = "rent2";
+    };
+    rent2.onclick = function () {
+      rent2.className = "rent2 active";
+      rent1.className = "rent1";
+    };
+
+
+    $.ajax({
+      type: "GET",
+      xhrFields: {
+        withCredentials: true
+      },
+      url: "http://localhost:8000/order/details/num_count",
+      complete: function (res) {
+        console.log(res);
+        document.querySelector(".cart-count").innerHTML = res.responseText;
+      }
+    });
+
+    //加入购物车
+    var cartBtn = document.querySelector(".cart-btn");
+    cartBtn.onclick = function () {
+      if (this.dataset.count > 0) {
+        if (rent1.className == "rent1 active") {
+          $.ajax({
+            type: "Get",
+            data: {
+              price: this.dataset.price,
+              cost_price: this.dataset.market,
+              details: this.dataset.details,
+              image: this.dataset.image,
+              num: data.chooseNum
+            },
+            xhrFields: {
+              withCredentials: true
+            },
+            url: "http://localhost:8000/order/details/shopping_cart",
+            complete: function (res) {
+              console.log(res.responseText);
+              document.querySelector(".cart-count").innerHTML = res.responseText;
+            }
+          });
+        } else {
+          $.ajax({
+            type: "Get",
+            data: {
+              price: this.dataset.price,
+              cost_price: this.dataset.cost,
+              details: this.dataset.details,
+              image: this.dataset.image,
+              num: data.chooseNum
+            },
+            url: "http://localhost:8000/order/details/shopping_cart",
+            complete: function (res) {
+              // console.log(res);
+              document.querySelector(".cart-count").innerHTML = res.responseText;
+
+            }
+          });
+        }
+      }
+    };
+  </script>
+
+</body>
+
+</html>

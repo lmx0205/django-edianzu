@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://m.edianzu.com/wap/order/confirm -->
+<html style="font-size: 25.875px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>确认订单</title>
+ 
+   
+    <meta name="Keywords" content="电脑租赁,免押金,易点租,免押金租赁,企业租赁电脑,出租办公电脑,北京电脑租赁,IBM笔记本租赁,IBM电脑租赁,租赁苹果电脑,服务器租赁,高配台式机租赁,笔记本电脑租赁,苹果电脑租赁,北京笔记本出租,免押金租电脑,电脑免押金租赁">
+    <meta name="baidu-site-verification" content="x6vU8kiRne">
+    <meta name="Description" content="易点租 首创0押金，月租金85元/月起，随租随还，全程保修。中小企业办公电脑最优之选。">
+    <link href="/static/order/css/app.ffb88b90a0d3fde7e2f0.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/order/css/main.css">
+    <link rel="stylesheet" href="/static/order/css/confirm.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <header data-v-3536ac9b="" class="header normal">
+                <div data-v-3536ac9b=""><i data-v-3536ac9b="" class="svg-icon icon-back"></i>
+                    <h2 data-v-3536ac9b="">确认订单</h2>
+                </div>
+            </header>
+            <div data-v-fc620b1a="">
+                <div data-v-fc620b1a="" class="confirm-order">
+                    <div data-v-fc620b1a="" class="group">
+                        <h3 data-v-fc620b1a="" class="title">租赁商品</h3>
+                        {%for item in orderdetail%}
+                        <div data-v-fc620b1a="" class="item">
+                            <div data-v-fc620b1a="" class="row detail">
+                                <div data-v-fc620b1a="" class="img-box"><a data-v-fc620b1a="" href="https://m.edianzu.com/wap/product/118943"
+                                        class=""><img data-v-fc620b1a="" alt=""
+                                            src="/{{item.cart.image}}"
+                                            lazy="loaded"></a></div>
+                                <h4 data-v-fc620b1a="" class="product-title"><a data-v-fc620b1a="" href="https://m.edianzu.com/wap/product/118943"
+                                        class="" title="{{item.cart.details}}">
+                                        {{item.cart.details}}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="label">月租金：</span>
+                                    <span data-v-fc620b1a="" class="content">￥{{item.cart.price}}
+                                      
+                                        </span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="label">押金：</span>
+                                    <span data-v-fc620b1a="" class="content">￥{{item.cart.cost_price}}</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="label">数量：</span>
+                                    <span data-v-fc620b1a="" class="content">{{item.count}}</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="label">起租日期：</span>
+                                    <span data-v-fc620b1a="" class="content">{{order.create_time}}</span></div>
+                            </div>
+                         
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="label">租期：</span>
+                                    <span data-v-fc620b1a="" class="content">24个月</span></div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <div data-v-fc620b1a="" class="group">
+                        <div data-v-fc620b1a="" class="title"><span data-v-fc620b1a="">快递地址：</span> <a data-v-fc620b1a=""
+                                href="https://m.edianzu.com/wap/ucenter/address/select" class=""><i data-v-fc620b1a=""
+                                    class="svg-icon icon-next to-address"></i></a></div>
+                        <div data-v-fc620b1a="" class="item">
+                            <div data-v-fc620b1a="" class="row">
+                                <span data-v-fc620b1a="" class="receiver-phone">13420133014</span> <span
+                                    data-v-fc620b1a="" class="receiver-address">{{order.address}}</span> <span
+                                    data-v-fc620b1a="" class="red">默认地址</span></div>
+                        </div>
+                    </div>
+                    <div data-v-fc620b1a="" class="group">
+                        <div data-v-fc620b1a="" class="title"><span data-v-fc620b1a="">订单备注：</span></div> <textarea
+                            data-v-fc620b1a="" id="user-remark" rows="3">{{order.remark}}</textarea>
+                    </div>
+                    <div data-v-fc620b1a="" class="group">
+                        <div data-v-fc620b1a="" class="title"><span data-v-fc620b1a="">支付方式：</span></div>
+                        <ul data-v-fc620b1a="" class="payment">
+                            <li data-v-fc620b1a="" class="clearfix"><label data-v-fc620b1a="" class="payment-select"><i
+                                        data-v-5d670190="" data-v-fc620b1a="" class="radio-box" style="width: 1rem; height: 1rem;"><i
+                                            data-v-5d670190="" class="svg-icon icon-radio" style="width: 1rem; height: 1rem; display: none;"></i><i
+                                            data-v-5d670190="" class="svg-icon icon-radio-checked" style="width: 1rem; height: 1rem;"></i></i>
+                                    在线支付
+                                </label></li>
+                            <li data-v-fc620b1a="" class="clearfix disabled"><label data-v-fc620b1a="" class="payment-select"><i
+                                        data-v-5d670190="" data-v-fc620b1a="" class="radio-box" style="width: 1rem; height: 1rem;"><i
+                                            data-v-5d670190="" class="svg-icon icon-radio-disabled" style="width: 1rem; height: 1rem;"></i><i
+                                            data-v-5d670190="" class="svg-icon icon-radio-checked" style="width: 1rem; height: 1rem; display: none;"></i></i>
+                                    货到付款
+                                </label></li>
+                        </ul>
+                    </div>
+                    <div data-v-fc620b1a="" class="group">
+                        <div data-v-fc620b1a="" class="item">
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="total-label">应付总金额：</span>
+                                    <span data-v-fc620b1a="" class="content">￥{{order.total_price}}</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="total-label">应付押金：</span>
+                                    <span data-v-fc620b1a="" class="content">￥{{order.total_price}}</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="total-label">应付租金：</span>
+                                    <span data-v-fc620b1a="" class="content">￥{{order.total_price}}</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="total-label">运费：</span>
+                                    <span data-v-fc620b1a="" class="content">￥0.00</span></div>
+                            </div>
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container"><span data-v-fc620b1a="" class="total-label">免押金抵扣：</span>
+                                    <span data-v-fc620b1a="" class="content">￥0.00</span></div>
+                            </div>
+  
+                            <div data-v-fc620b1a="" class="row">
+                                <div data-v-fc620b1a="" class="container">
+                                    <div data-v-fc620b1a="" class="terms"><i data-v-5d670190="" data-v-fc620b1a=""
+                                            class="radio-box" style="width: 1rem; height: 1rem;"><i
+                                                data-v-5d670190="" class="svg-icon icon-radio-checked" style="width: 1rem; height: 1rem;"></i></i>
+                                        <div data-v-fc620b1a="" class="terms-tips" style="display: none;">请先阅读并同意协议<i
+                                                data-v-fc620b1a="" class="icon-arrow-down"></i></div>
+                                        我已阅读并同意<a data-v-fc620b1a="" href="https://m.edianzu.com/wap/order/agreement"
+                                            class="">易点租租赁服务协议</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-fc620b1a="" class="order-footer">
+                    <div data-v-fc620b1a="" class="container">
+                        <div data-v-fc620b1a="" class="left">实付款：<span data-v-fc620b1a="" class="red">￥{{order.total_price}}</span></div>
+                        <span data-v-fc620b1a="" class="right"><a data-v-fc620b1a="" href="/user/user_center/" style="background: #29a0ff;" class="disabled-btn">提交订单</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>

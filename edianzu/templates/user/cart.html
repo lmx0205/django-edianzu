@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html style="font-size: 25.875px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>购物车</title>
+
+    <meta name="Keywords" content="电脑租赁,免押金,易点租,免押金租赁,企业租赁电脑,出租办公电脑,北京电脑租赁,IBM笔记本租赁,IBM电脑租赁,租赁苹果电脑,服务器租赁,高配台式机租赁,笔记本电脑租赁,苹果电脑租赁,北京笔记本出租,免押金租电脑,电脑免押金租赁">
+    <meta name="baidu-site-verification" content="x6vU8kiRne">
+    <meta name="Description" content="易点租 首创0押金，月租金85元/月起，随租随还，全程保修。中小企业办公电脑最优之选。">
+    <link href="/static/goods/css/app.ffb88b90a0d3fde7e2f0.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/goods/css/main.css">
+    <link rel="stylesheet" href="/static/user/css/cart.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <header data-v-3536ac9b="" class="header normal">
+                <div data-v-3536ac9b=""><a href="/"><i data-v-3536ac9b="" class="svg-icon icon-back"></i></a>
+                    <h2 data-v-3536ac9b="">购物车</h2>
+                </div>
+            </header>
+            <!---->
+            <div data-v-e30e85d0="">
+                <div data-v-e30e85d0="" class="cart padding-bottom">
+                    <div data-v-e30e85d0="" class="group">
+
+                        {%for item in result%}
+                        <div data-v-e30e85d0="" class="item">
+                            <div data-v-e30e85d0="" class="row detail clearfix ">
+                                <div data-v-e30e85d0="" class="checkbox">
+                                    <i data-v-5d670190="" id="icon" data-v-e30e85d0="" class="radio-box" style="width: 1rem; height: 1rem;">
+                                        <i data-v-5d670190="" id="icon_one" class="svg-icon icon-radio" style="width: 1rem; height: 1rem;"></i>
+                                        <!-- <i data-v-5d670190="" id="icon_two" class="svg-icon icon-radio-checked" style="width: 1rem; height: 1rem; display: none;"></i> -->
+                                    </i>
+                                </div>
+                                <div data-v-e30e85d0="" class="img-box"><a data-v-e30e85d0="" href=""
+                                        class=""><img data-v-e30e85d0="" src="/{{item.image}}"
+                                            lazy="loaded"></a></div>
+                                <h4 data-v-e30e85d0="" class="product-title"><a data-v-e30e85d0="" href=""
+                                        class="" title="{{item.details}}">{{item.details}}</a>
+                                    <div data-v-e30e85d0="">
+                                    </div>
+                                </h4>
+                            </div>
+                          
+                            <div data-v-e30e85d0="" class="row">
+                                <div data-v-e30e85d0="" class="container">
+                                    <div data-v-e30e85d0="" class="desc">本商品租期为 <span data-v-e30e85d0="" class="red">24</span>
+                                        个月，租期结束后设备归还易点租</div>
+                                </div>
+                            </div>
+                            <div data-v-e30e85d0="" class="row">
+                                <div data-v-e30e85d0="" class="container">
+                                    <div data-v-e30e85d0="" class="rent-money"><span data-v-e30e85d0="" class="label">月租金：</span>
+                                        
+                                        <span data-v-e30e85d0="" class="content">
+                                            ￥<span>{{item.cost_price}}</span>
+                                        </span>
+                                        <span class="numCount" style="position: absolute;left: 11.2rem;">1</span>
+                                    </div>
+                                        
+                                    <div data-v-9434b322="" data-v-e30e85d0="" class="count-box"><i data-v-9434b322=""
+                                            class="clac subtract">—</i> <input data-v-9434b322="" maxlength="3" type="tel"
+                                            class="count-input"> <i data-v-9434b322="" class="clac add">+</i></div>
+                                    <div data-v-e30e85d0="" class="del"><a href="{%url 'del_car' item.id%}">删除</a></div>
+                                </div>
+                            </div>
+                            <div data-v-e30e85d0="" class="row">
+                                <div data-v-e30e85d0="" class="container"><span data-v-e30e85d0="" class="label">押金：</span>
+                                    <span data-v-e30e85d0="" class="content ">￥<span class="yajin">{{item.price}}</span></span></div>
+                            </div>
+                            <div data-v-e30e85d0="" class="row">
+                                <div data-v-e30e85d0="" class="container"><span data-v-e30e85d0="" class="label">首付期数：</span>
+                                    <span data-v-e30e85d0="" class="content ">1</span></div>
+                            </div>
+                            <div data-v-e30e85d0="" class="row">
+                                <div data-v-e30e85d0="" class="container"><span data-v-e30e85d0="" class="label">起租日期：</span>
+                                    <span data-v-e30e85d0="" class="content ">
+                                        <div data-v-68aa21fb="" data-v-e30e85d0="" class="cov-vue-date date-input">
+                                            <div data-v-68aa21fb="" class="datepickbox"><input data-v-68aa21fb="" type="text"
+                                                    title="input date" readonly="readonly" class="cov-datepicker"
+                                                    style="width: 100%; height: 100%; border: 0px;"></div>
+                                        </div>
+                                    </span>
+                                    <span class="time" style="position: absolute; right: 6rem;"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        {%endfor%}
+                    </div>
+ 
+                </div>
+                <div data-v-e30e85d0="" class="footer-tip"><span data-v-e30e85d0="">此订单需要支付现金押金,无法使用货到付款方式支付</span></div>
+                <div data-v-e30e85d0="" class="cart-footer" style="text-align: right;">
+                    <div data-v-e30e85d0="" class="container"><span data-v-e30e85d0="" class="center red">实付款：￥<span class="money_all">0</span></span> <span data-v-e30e85d0=""
+                            class="right"><a data-v-e30e85d0="" class="submit-btn">&nbsp;&nbsp;结算&nbsp;&nbsp;</a></span></div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+<script src="/static/user/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    // $.get('http://localhost:8000/user/cartList/').then(function(res){
+            
+    //     })
+    
+    // $('#icon').click(function (params) {
+    //     $('#icon_one').toggleClass('icon-radio-checked')
+    // });
+    var myDate = new Date();//获取系统当前时间
+    var time = myDate.getFullYear() + '-' + (myDate.getMonth()+1) + '-' + myDate.getDate()
+    
+
+
+    var icon = document.querySelectorAll('#icon')  //是否选中
+    var rent_money = document.querySelectorAll('.rent-money') //选中所有的租金
+    var yajin = document.querySelectorAll('.yajin')  //选中所有的押金
+    var money_all =parseInt(document.querySelector('.money_all').textContent) //应该交付的总金额
+    var add = document.querySelectorAll('.add')  //增加数量
+    var subtract = document.querySelectorAll('.subtract')  //减少数量
+    var numCount = document.querySelectorAll('.numCount')  //显示数量
+    var spantime =document.querySelectorAll('.time') //时间
+    for (var i=0;i<icon.length;i++){
+        // console.log(spantime[i].textContent)
+        spantime[i].innerHTML = time
+        // 是否选中
+        icon[i].count = i      
+        icon[i].onclick = function() {
+            // console.log(icon[this.count].children[0])
+            // console.log(rent_money[this.count].children[1].children[0].textContent)
+            // console.log(yajin[this.count].textContent)
+            var icon_one = icon[this.count].children[0]
+            if (icon_one.className == 'svg-icon icon-radio'){
+                icon_one.className = 'svg-icon icon-radio-checked'
+                money_all += (parseFloat(rent_money[this.count].children[1].children[0].textContent)+parseFloat(yajin[this.count].textContent))
+
+            }else{
+                icon_one.className = 'svg-icon icon-radio'
+                money_all -= (parseFloat(rent_money[this.count].children[1].children[0].textContent)+parseFloat(yajin[this.count].textContent))
+                
+            }
+            document.querySelector('.money_all').innerHTML = money_all
+
+        }
+
+        // 增加数量
+        add[i].count = i
+        add[i].start_yajin = parseInt(yajin[i].textContent) //定义起始押金
+        add[i].onclick = function(){
+            var icon_one = icon[this.count].children[0]
+            if (icon_one.className == 'svg-icon icon-radio'){
+                console.log('please click')
+            }else{
+                var num = parseInt(numCount[this.count].textContent)+1
+                numCount[this.count].innerHTML = num
+                yajin[this.count].innerHTML = num*this.start_yajin
+                money_all += parseFloat(this.start_yajin)
+                // console.log(money_all)
+                document.querySelector('.money_all').innerHTML = money_all
+            }
+            
+            
+        }
+        
+        // 减少数量
+        subtract[i].count = i
+        subtract[i].start_yajin = parseInt(yajin[i].textContent)
+        subtract[i].onclick = function(){
+            if (numCount[this.count].textContent==1) {
+                numCount[this.count].innerHTML = 1
+            } else {
+                var num = parseInt(numCount[this.count].textContent)-1
+                
+                money_all -= (parseFloat(this.start_yajin))
+                document.querySelector('.money_all').innerHTML = money_all
+                numCount[this.count].innerHTML = num
+                yajin[this.count].innerHTML = parseInt(yajin[this.count].textContent) - this.start_yajin
+            }
+            
+        }
+        
+
+        
+    }
+
+    var icons = document.getElementsByClassName('icon-radio-checked')
+    var submit_btn = document.querySelector('.submit-btn')
+    
+    submit_btn.onclick = function(){
+        for(var k=0;k<icons.length;k++){
+        div_icon = icons[k].parentElement.parentElement.parentElement.parentElement
+ 
+        $.ajax({
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            data:{
+                image:div_icon.getElementsByTagName('img')[0]['attributes'][1]['nodeValue'],
+                details:div_icon.getElementsByClassName('product-title')[0]['innerText'],
+                zuqi:24,
+                price:div_icon.getElementsByClassName('rent-money')[0]['children'][1]['children'][0]['innerText'],
+                cost_price:div_icon.getElementsByClassName('yajin')[0]['innerText'],
+                num:div_icon.getElementsByClassName('numCount')[0]['innerText'],
+                qishu:1,
+                time:div_icon.getElementsByClassName('time')[0]['innerText'],
+                zongjia:(parseInt(div_icon.getElementsByClassName('rent-money')[0]['children'][1]['children'][0]['innerText'])+parseInt(div_icon.getElementsByClassName('yajin')[0]['innerText']))*parseInt(div_icon.getElementsByClassName('numCount')[0]['innerText'])
+            },
+            url: "http://localhost:8000/order/message/",
+            complete: function (res) {
+                console.log(res);
+                location.href = '/order/details/confirm'
+            }
+            });
+    }
+
+}
+    
+    
+   
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://m.edianzu.com/wap/login -->
+<html style="font-size: 25.875px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>登录</title>
+    <style type="text/css">
+            .agl-hover {
+                outline: 2px solid rgba(244,67,54,0.99) !important;
+                background-color: rgba(244,67,54,0.2) !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+            }
+            .agl-highlight-current {
+                outline: 2px solid rgba(255,87,34,0.99) !important;
+                background-color: rgba(255,87,34,0.4) !important;
+            }
+            .agl-highlight-similar {
+                outline: 2px dashed rgba(255,87,34,0.99) !important;
+                background-color: rgba(255,87,34,0.4) !important;
+            }
+            .agl-highlight-group {
+                outline: 4px double rgba(255,87,34,0.99) !important;
+                background-color: rgba(255,87,34,0.4) !important;
+            }
+            .agl-cover-current {
+                
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                z-index: 9 !important;
+        
+                outline: 2px solid rgba(33,33,33,0.99) !important;
+                background-color: rgba(33,33,33,0.6) !important;
+            }
+            .agl-cover-similar {
+                
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                z-index: 9 !important;
+        
+                outline: 2px dashed rgba(33,33,33,0.99) !important;
+                background-color: rgba(33,33,33,0.6) !important;
+            }
+            .agl-cover-group {
+                
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                z-index: 9 !important;
+        
+                outline: 4px double rgba(33,33,33,0.99) !important;
+                background-color: rgba(33,33,33,0.6) !important;
+            }
+            .agl-cover-focus {
+                outline: 3px solid rgba(255,165,0,0.99) !important;
+                background-color: rgba(255,165,0,0.4) !important;
+            }
+        </style>
+    <meta name="Keywords" content="电脑租赁,免押金,易点租,免押金租赁,企业租赁电脑,出租办公电脑,北京电脑租赁,IBM笔记本租赁,IBM电脑租赁,租赁苹果电脑,服务器租赁,高配台式机租赁,笔记本电脑租赁,苹果电脑租赁,北京笔记本出租,免押金租电脑,电脑免押金租赁">
+    <meta name="baidu-site-verification" content="x6vU8kiRne">
+    <meta name="Description" content="易点租 首创0押金，月租金85元/月起，随租随还，全程保修。中小企业办公电脑最优之选。">
+  <link href="/static/login_register/login/app.ffb88b90a0d3fde7e2f0.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/login_register/login/animate.css">
+  <link rel="stylesheet" type="text/css" href="/static/login_register/login/main.css">
+  <link rel="stylesheet" href="/static/login_register/login/login.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <header data-v-3536ac9b="" class="header normal">
+                <div data-v-3536ac9b=""><i data-v-3536ac9b="" class="svg-icon icon-back"></i>
+                    <h2 data-v-3536ac9b="">登录易点租</h2>
+                </div>
+            </header>
+            <!---->
+            <div data-v-756a321c="" class="login">
+                <div data-v-756a321c="" class="login-tab">
+                    <span data-v-756a321c="" onclick="showphoneactive()"><a data-v-756a321c="" class="active" id="phone" >手机快捷登录</a></span>
+                    <span data-v-756a321c=""  onclick="showzhanghaoactive()"><a data-v-756a321c="" class="" id="zhanghao">账号密码登录</a></span>
+                </div>
+                <form action="{%url 'login'%}" method="POST">
+                        {% csrf_token %}
+                    <div data-v-756a321c="" class="form-box">
+                        <div data-v-756a321c=""  class="login-form" id="divzhanghao" style="display:none;">
+                            <div data-v-756a321c="" class="item"><span data-v-756a321c="" class="label">账号</span> <span
+                                    data-v-756a321c="" class="input-box"><input data-v-756a321c="" type="text" name="username" placeholder="用户名 / 绑定手机号"></span></div>
+                            <div data-v-756a321c="" class="item"><span data-v-756a321c="" class="label">密码</span> <span
+                                    data-v-756a321c="" class="input-box"><input data-v-756a321c="" type="password" name="pw"
+                                        placeholder="请输入密码"></span></div>
+                            <div data-v-756a321c="" id="accountCaptcha"></div>
+                        </div>
+                        <div data-v-756a321c="" class="login-form" id="divphone">
+                            <div data-v-756a321c="" class="item"><span data-v-756a321c="" class="label">手机号码</span> <span
+                                    data-v-756a321c="" class="input-box"><input data-v-756a321c="" type="tel" name="tel" placeholder="请输入手机号"></span></div>
+                            <div data-v-756a321c="" id="phoneCaptcha"><input type="hidden" name="NECaptchaValidate" value=""
+                                    class="yidun_input"></div>
+                            <div data-v-756a321c="" class="item"><span data-v-756a321c="" class="label">短信验证码</span> <span
+                                    data-v-756a321c="" class="input-box"><input data-v-756a321c="" type="text" name="message" maxlength="6"
+                                        placeholder="请输入短信验证码" class="capcha-input"></span> <button data-v-756a321c=""
+                                    class="verification">获取验证码</button></div>
+                        </div>
+                    </div>
+                    <div data-v-756a321c="" class="btn-box"><button data-v-756a321c="" type="submit" class="login-btn">立即登录</button></div>
+                </form>
+                <div data-v-756a321c="" class="bottom">
+                    <a data-v-756a321c="" href="{%url 'register'%}">立即注册</a> 
+                    <a data-v-756a321c="" href="">忘记密码</a></div>
+            </div>
+
+        </div>
+    </div>
+ 
+    <script type="text/javascript">
+        var  zhanghao=document.getElementById('zhanghao');
+        var  phone=document.getElementById('phone');
+        var divzhanghao = document.getElementById('divzhanghao');
+        var  divphone=document.getElementById('divphone');
+
+        function showzhanghaoactive(){
+            zhanghao.className="active";
+            phone.className = " ";
+            divphone.className = 'login-form animated bounceOutLeft';
+            divzhanghao.style.display = 'block';
+            divzhanghao.className = 'login-form animated bounceInRight'
+
+        }
+        function showphoneactive(){
+            zhanghao.className=" ";
+            phone.className = "active";
+            divzhanghao.className = 'login-form animated bounceOutRight';
+            divphone.className = 'login-form animated bounceInLeft'
+        }
+                 
+        // animated bounceInLeft
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+from django.shortcuts import render, HttpResponse
+from .models import Goods
+from django.http import JsonResponse
+import json
+
+
+def category(request):
+    return render(request, 'goods/category.html')
+
+
+def categoryList(request, name):
+    goods = Goods.objects.filter(name=name)
+    categorys = Goods.objects.values('name').distinct()
+    tags = Goods.objects.values('unit').distinct()
+    good_name = goods[0].name
+    print(good_name)
+    return render(request, 'goods/categoryList.html', {'goods': goods, 'categorys': categorys, 'tags': tags, 'good_name': good_name})
+
+
+def choose(request):
+    choose1 = request.GET.get('choose1')
+    choose2 = request.GET.get('choose2')
+    print(choose1, choose2)
+    if choose1 == "不限" or choose1 == None:
+        if choose2 == "不限" or choose2 == None:
+            goods = Goods.objects.all()
+        else:
+            goods = Goods.objects.filter(unit=choose2)
+    else:
+        if choose2 == "不限" or choose2 == None:
+            goods = Goods.objects.filter(name=choose1)
+        else:
+            goods = Goods.objects.filter(name=choose1, unit=choose2)
+    print(goods)
+    content = []
+    for good in goods:
+        name = {
+            'name': good.name,
+            'image': str(good.image),
+            'details': good.details,
+            'keywords': good.keywords,
+            'price': float(good.market_price)
+        }
+        content.append(name)
+    content = json.dumps(content)
+    # print(content)
+    categorys = Goods.objects.values('name').distinct()
+    tags = Goods.objects.values('unit').distinct()
+    # a = render(request,'goods/choose.html',{'goods':goods,'categorys':categorys,'tags':tags})
+    a = HttpResponse(content)
+    a['Access-Control-Allow-Origin'] = "*"
+    a['Access-Control-Allow-Headers'] = "*"
+    return a
+
+
+count = True
+
+
+def sale(request, name):
+    global count
+    if count:
+        goods = Goods.objects.filter(name=name).all().order_by('-sales_count')
+        count = False
+    else:
+        goods = Goods.objects.filter(name=name).all().order_by('sales_count')
+        count = True
+
+    categorys = Goods.objects.values('name').distinct()
+    tags = Goods.objects.values('unit').distinct()
+    good_name = goods[0].name
+    print(good_name)
+    return render(request, 'goods/categoryList.html', {'goods': goods, 'categorys': categorys, 'tags': tags, 'good_name': good_name})
+
+
+def price(request, name):
+    global count
+    if count:
+        goods = Goods.objects.filter(name=name).all().order_by('-market_price')
+        count = False
+    else:
+        goods = Goods.objects.filter(name=name).all().order_by('market_price')
+        count = True
+
+    categorys = Goods.objects.values('name').distinct()
+    tags = Goods.objects.values('unit').distinct()
+    good_name = goods[0].name
+    print(good_name)
+    return render(request, 'goods/categoryList.html', {'goods': goods, 'categorys': categorys, 'tags': tags, 'good_name': good_name})

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://m.edianzu.com/wap/ucenter -->
+<html style="font-size: 25.875px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>个人中心</title>
+    <meta name="Keywords" content="电脑租赁,免押金,易点租,免押金租赁,企业租赁电脑,出租办公电脑,北京电脑租赁,IBM笔记本租赁,IBM电脑租赁,租赁苹果电脑,服务器租赁,高配台式机租赁,笔记本电脑租赁,苹果电脑租赁,北京笔记本出租,免押金租电脑,电脑免押金租赁">
+    <meta name="baidu-site-verification" content="x6vU8kiRne">
+    <meta name="Description" content="易点租 首创0押金，月租金85元/月起，随租随还，全程保修。中小企业办公电脑最优之选。">
+    <link href="/static/user/css/app.ffb88b90a0d3fde7e2f0.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/user/css/user_center.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <header data-v-3536ac9b="" class="header normal">
+                <div data-v-3536ac9b=""><i data-v-3536ac9b="" class="svg-icon icon-back"></i>
+                    <h2 data-v-3536ac9b="">个人中心</h2>
+                </div>
+            </header>
+            <!---->
+            <div data-v-60a95f68="" class="ucenter">
+                <div data-v-60a95f68="" class="banner"><i data-v-60a95f68="" class="svg-icon icon-phone"></i> <span
+                        data-v-60a95f68="" class="phone">{{user.username}}</span>
+                    <div data-v-60a95f68="" class="star"><span data-v-07b459b8="" data-v-60a95f68="" class="stars"><i
+                                data-v-07b459b8="" class="icon icon-star-gray"></i><i data-v-07b459b8="" class="icon icon-star-gray"></i><i
+                                data-v-07b459b8="" class="icon icon-star-gray"></i><i data-v-07b459b8="" class="icon icon-star-gray"></i><i
+                                data-v-07b459b8="" class="icon icon-star-gray"></i>
+
+                        </span></div> <span data-v-60a95f68="" class="detail"><a data-v-60a95f68="" href="user_info/"
+                            class="">个人资料</a></span>
+                </div>
+                <div data-v-60a95f68="" class="order-status">
+                    <div data-v-60a95f68=""><a data-v-60a95f68="" href="/user/user_center/user_order/"
+                            class=""><i data-v-60a95f68="" class="svg-icon icon-order-pay"></i>
+                            <p data-v-60a95f68="">待付款</p>
+                        </a></div>
+                    <div data-v-60a95f68=""><a data-v-60a95f68="" href="
+                            class=""><i data-v-60a95f68="" class="svg-icon icon-car"></i>
+                            <p data-v-60a95f68="">待收货</p>
+                        </a></div>
+                </div>
+                <ul data-v-60a95f68="" class="menu">
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href="{%url 'user_order'%}" ><i
+                                data-v-60a95f68="" class="svg-icon icon-order"></i> <span data-v-60a95f68="">我的订单</span>
+                            <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href="" ><i data-v-60a95f68="" class="svg-icon icon-money"></i> <span data-v-60a95f68="">免押金额度</span>
+                            <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href=""><i
+                                data-v-60a95f68="" class="svg-icon icon-account"></i> <span data-v-60a95f68="">我的账户</span>
+                            <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href=""><i
+                                data-v-60a95f68="" class="svg-icon icon-discount"></i> <span data-v-60a95f68="">优惠券</span>
+                            <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href="user_address/"><i
+                                data-v-60a95f68="" class="svg-icon icon-address"></i> <span data-v-60a95f68="">快递地址</span>
+                            <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                    <li data-v-60a95f68=""><a data-v-60a95f68="" href="{%url 'logout'%}"><i data-v-60a95f68="" class="svg-icon icon-exit"></i> <span data-v-60a95f68="">退出登录</span>
+                        <i data-v-60a95f68="" class="svg-icon icon-next detail"></i></a></li>
+                </ul>
+            </div>
+            <footer data-v-510e0638=""><a data-v-510e0638="" href="/" class="">
+                <div data-v-510e0638="" class="item">
+                    <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-home"></i></div>
+                    <p data-v-510e0638="">首页</p>
+                </div>
+            </a> <a data-v-510e0638="" href="{%url 'category'%}" class="">
+                <div data-v-510e0638="" class="item">
+                    <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-category"></i></div>
+                    <p data-v-510e0638="">分类</p>
+                </div>
+            </a> <a data-v-510e0638="" href="/user/cart" class="">
+                <div data-v-510e0638="" class="item">
+                    <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-cart-footer"></i></div>
+                    <p data-v-510e0638=""><span data-v-510e0638="">购物车</span> <span data-v-510e0638="" class="cart-count">0</span></p>
+                </div>
+            </a> <a data-v-510e0638="" href="{%url 'user_center'%}" class="router-link-exact-active router-link-active active">
+                <div data-v-510e0638="" class="item">
+                    <div data-v-510e0638="" class="icon-box"><i data-v-510e0638="" class="icon icon-ucenter-active"></i></div>
+                    <p data-v-510e0638="">我的</p>
+                </div>
+            </a>
+
+        </footer>
+        </div>
+    </div>
+    <script src="/static/order/js/jquery-1.11.0.js"></script>
+    <script>
+    $.ajax({
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            url: "http://localhost:8000/order/details/num_count",
+            complete: function (res) {
+                console.log(res);
+                document.querySelector(".cart-count").innerHTML = res.responseText;
+            }
+            });</script>
+
+</body>
+
+</html>
